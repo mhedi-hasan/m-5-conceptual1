@@ -14,6 +14,8 @@ for (const btn of allBtn) {
     p1.innerText=placeName;
     const p2=document.createElement("p");
     p2.innerText=price;
+
+    e.target.parentNode.parentNode.style.backgroundColor='orange';
     // -------- li appendChild p1 & p2 -----------
     li.appendChild(p1);
     li.appendChild(p2);
