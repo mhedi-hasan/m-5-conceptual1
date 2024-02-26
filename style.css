@@ -57,11 +57,15 @@ nav{
     justify-content: space-between;
 
 }
+.total-costs{
+    padding-top: 4px;
+    font-size: 20px;
+}
 .left-content{
     /* border: 1px solid gray; */
     width: 1000px !important;
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
 }
 .cart-container{
     /* border: 1px solid rgb(88, 25, 235); */
@@ -104,6 +108,9 @@ nav{
     position: absolute;
 
 }
+.category{
+    display: flex;
+}
 #menu-cart{
     border: none !important;
     width: 30px;
@@ -140,7 +147,9 @@ li{
     
 }
 .selected-place-container{
-    width:200px;
+    width:400px;
+    font-size: large;
+    font-weight: 900;
     margin: auto;
-    
+    padding-left: 100px;
 }
