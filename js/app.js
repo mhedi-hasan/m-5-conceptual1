@@ -20,22 +20,47 @@ for (const btn of allBtn) {
     selectedContainer.appendChild(li)
 
 
-    const totalCost=document.getElementById('total-cost').innerText;
-    const convertedTotalCost=parseInt(totalCost);
-    const sum=convertedTotalCost+parseInt(price);
+    // const totalCost=document.getElementById('total-cost').innerText;
+    // const convertedTotalCost=parseInt(totalCost);
+    // const sum=convertedTotalCost+parseInt(price);
 
-    const grandCost=document.getElementById('grand-total').innerText;
-    const convertedGrandCost=parseInt(grandCost);
-    const sum2=convertedGrandCost+parseInt(price);
+    // const grandCost=document.getElementById('grand-total').innerText;
+    // const convertedGrandCost=parseInt(grandCost);
+    // const sum2=convertedGrandCost+parseInt(price);
 
-    setInnerText('total-cost',sum)
-    setInnerText('grand-total',sum2)
+    // setInnerText('total-cost',sum)
+    // setInnerText('grand-total',sum2)
+    // ------------------------------------------------------
+    totalCost("total-cost",parseInt(price));
+    grandTotalCost("grand-total",parseInt(price));
     // -------------------------------------------------
     setInnerText("cart-count",count)
   });
 }
-// --------------------------
 
+// ------------------------------------------------------
 function setInnerText(id,value){
     document.getElementById(id).innerText = value;
+}
+// -------------------------------------------------
+function totalCost(id,value){
+    const totalCost=document.getElementById(id).innerText;
+    const convertedTotalCost=parseInt(totalCost);
+    const sum=convertedTotalCost+parseInt(value);
+    setInnerText("total-cost",sum)
+}
+// ------------------------------------------------------
+function grandTotalCost(category){
+    const totalCost=document.getElementById('total-cost').innerText;
+    const convertedTotalCost=parseInt(totalCost);
+
+    if(category=='bus'){
+        setInnerText('grand-total',convertedTotalCost+100);
+    } else if(category=='train'){
+        setInnerText('grand-total',convertedTotalCost-200);
+    } else if(category=='flight'){
+        setInnerText('grand-total',convertedTotalCost+500);
+    }else{ 
+        setInnerText('grand-total',convertedTotalCost);
+    }
 }
