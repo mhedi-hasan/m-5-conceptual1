@@ -17,8 +17,15 @@ for (const btn of allBtn) {
     // -------- li appendChild p1 & p2 -----------
     li.appendChild(p1);
     li.appendChild(p2);
-    selectedContainer.appendChild(li)
+    const budget=document.getElementById('budget').innerText;
+    const convertedBudget=parseInt(budget)
+    if(convertedBudget-parseInt(price)<0){
+        alert('Low budget. Please earn more')
+        return;
+    }
+    document.getElementById('budget').innerText=convertedBudget-parseInt(price)
 
+    selectedContainer.appendChild(li)
 
     // const totalCost=document.getElementById('total-cost').innerText;
     // const convertedTotalCost=parseInt(totalCost);
